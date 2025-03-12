@@ -60,26 +60,37 @@ document.querySelectorAll("p").forEach(function (parrafo) {
 });
 
 /*3.3 Bloques de article o section: Color de fondo distinto al de párrafo.*/
-document
-  .getElementsByTagName("section")[0]
-  .addEventListener("mouseover", function () {
+const pallete = [
+  "#669bbc",
+  "#003049",
+  "#fdf0d5",
+  "#c1121f",
+  "#780000",
+];
+const getRandomFondo = (array) => {
+  return array[Math.floor(Math.random() * array.length)];
+};
+    document.getElementsByTagName("section")[0].style.color =
+      getRandomFondo(pallete);
+    document.getElementsByTagName("section")[0].style.backgroundColor =
+      getRandomFondo(pallete);
+  
+
+/*document.getElementsByTagName("section")[0].addEventListener("mouseover", function () {
     document.getElementsByTagName("section")[0].style.color = "blue";
     document.getElementsByTagName("section")[0].style.backgroundColor =
       "yellow";
   });
 /*4.Crea una función de nombre getRandom que acepte un array con valores y devuelva uno de ellos de manera aleatoria.*/
 
-/*const colors = ["red", "blue", "green"];
-let num = Math.floor(Math.random() * colors.length);
+const colors = ["red", "blue", "green"];
+/*let num = Math.floor(Math.random() * colors.length);
 console.log(colors[num]);*/
-const getRandom = (array) => array[
-  Math.floor(Math.random() * array.length)
-];
+const getRandom = (array) => {
+  return array[Math.floor(Math.random() * array.length)];
+};
 console.log(getRandom(colors));
 
-
 /*5.Utiliza la función creada getRandom para utilizar colores aleatorios de una paleta que hayas escogido de coolors.co en los apartados anteriores.*/
-const pallete = ["~ Vivid sky blue", "~ Non Photo blue", "~ Light cyan", "~ Pacific cyan", ~ "Blue Green", "~ Honolulu Blue", "~ Marian blue", "~ Federal blue"];
-let numero = Math.floor(Math.random() * pallete.length);
-console.log(pallete[numero]);
+
 /*6.Utiliza la función creada getRandom para utilizar gifs aleatorios en los apartados anteriores.*/
