@@ -69,13 +69,13 @@ document
   });
 /*4.Crea una función de nombre getRandom que acepte un array con valores y devuelva uno de ellos de manera aleatoria.*/
 
-const colors = ["red", "blue", "green"];
+/*const colors = ["red", "blue", "green"];
 let num = Math.floor(Math.random() * colors.length);
-console.log(colors[num]);
-/*const getRandom = (array) => array[
+console.log(colors[num]);*/
+const getRandom = (array) => array[
   Math.floor(Math.random() * array.length)
 ];
-console.log(getRandom(colors));*/
+console.log(getRandom(colors));
 
 
 /*5.Utiliza la función creada getRandom para utilizar colores aleatorios de una paleta que hayas escogido de coolors.co en los apartados anteriores.*/
