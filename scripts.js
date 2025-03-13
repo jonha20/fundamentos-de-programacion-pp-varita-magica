@@ -38,40 +38,7 @@ document.querySelectorAll("article").forEach(function (article) {
 
 /*3.1 Imágenes: Cambia la imagen por el gif abracadabra.gif.*/
 
-const gifs = [
-  "assets/abracadabra.gif",
-  "assets/magic-2.gif",
-  "assets/magic-3.gif",
-  "assets/magic-4.gif",
-  "assets/magic-5.gif",
-  "assets/magic-6.gif"
-];
-const getRandomGifs = (array) => {
-  return array[Math.floor(Math.random() * array.length)];
-};
 
-//Ejercicio 6
-
-/* Con click en una foto
-document
-.getElementsByTagName("img")[2]
-  .addEventListener("click", function () {
-    document
-      .getElementsByTagName("img")[2]
-      .setAttribute("src", getRandomGifs(gifs));
-  });*/
-  document.querySelectorAll("img").forEach(function (fotos) {
-    fotos.addEventListener("mouseover", function () {
-      fotos.setAttribute("src", getRandomGifs(gifs));
-      fotos.setAttribute("src", getRandomGifs(gifs));
-    });
-  });
-  document.querySelectorAll("img").forEach(function (fotos) {
-    fotos.addEventListener("mouseout", function () {
-      fotos.setAttribute("src", getRandomGifs(gifs));
-      fotos.setAttribute("src", getRandomGifs(gifs));
-    });
-  });
 /* Codigo del propio Ejercicio*/
 document
   .getElementsByTagName("img")[3]
@@ -97,25 +64,7 @@ document.querySelectorAll("p").forEach(function (parrafo) {
 
 /*3.3 Bloques de article o section: Color de fondo distinto al de párrafo.*/
 
-//Ejercicio 5
 
-const pallete = [
-  "#669bbc",
-  "#003049",
-  "#fdf0d5",
-  "#c1121f",
-  "#780000",
-];
-const getRandomFondo = (array) => {
-  return array[Math.floor(Math.random() * array.length)];
-};
-    document.getElementsByTagName("section")[0].style.color =
-      getRandomFondo(pallete);
-    document.getElementsByTagName("section")[0].style.backgroundColor =
-      getRandomFondo(pallete);
-  
-
-/* Codigo del propio ejercicio
 document.getElementsByTagName("section")[0].addEventListener("mouseover", function () {
     document.getElementsByTagName("section")[0].style.color = "blue";
     document.getElementsByTagName("section")[0].style.backgroundColor =
@@ -133,4 +82,52 @@ console.log(getRandom(colors));
 
 /*5.Utiliza la función creada getRandom para utilizar colores aleatorios de una paleta que hayas escogido de coolors.co en los apartados anteriores.*/
 
+const pallete = [
+  "#669bbc",
+  "#003049",
+  "#fdf0d5",
+  "#c1121f",
+  "#780000",
+];
+const getRandomFondo = (array) => {
+  return array[Math.floor(Math.random() * array.length)];
+};
+    document.getElementsByTagName("section")[0].style.color =
+      getRandomFondo(pallete);
+    document.getElementsByTagName("section")[0].style.backgroundColor =
+      getRandomFondo(pallete);
+
 /*6.Utiliza la función creada getRandom para utilizar gifs aleatorios en los apartados anteriores.*/
+
+const gifs = [
+  "assets/abracadabra.gif",
+  "assets/magic-2.gif",
+  "assets/magic-3.gif",
+  "assets/magic-4.gif",
+  "assets/magic-5.gif",
+  "assets/magic-6.gif"
+];
+const getRandomGifs = (array) => {
+  return array[Math.floor(Math.random() * array.length)];
+};
+
+
+/* Con click en una foto
+document
+.getElementsByTagName("img")[2]
+  .addEventListener("click", function () {
+    document
+      .getElementsByTagName("img")[2]
+      .setAttribute("src", getRandomGifs(gifs));
+  });*/
+  document.querySelectorAll("img").forEach(function (fotos) {
+    fotos.addEventListener("mouseover", function () {
+      fotos.setAttribute("src", getRandomGifs(gifs));
+    });
+  });
+  document.querySelectorAll("img").forEach(function (fotos) {
+    const defaultSrc = fotos.src;
+    fotos.addEventListener("mouseout", function () {
+      fotos.src = defaultSrc;
+    });
+  });
